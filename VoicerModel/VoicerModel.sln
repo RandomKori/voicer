@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "VoicerModel", "VoicerModel.pyproj", "{165A2C66-9D3A-4EE0-9A2B-6CA79747DE2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{165A2C66-9D3A-4EE0-9A2B-6CA79747DE2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165A2C66-9D3A-4EE0-9A2B-6CA79747DE2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75355802-9BBE-4BE7-9F4C-80A66F21BFE8}
+	EndGlobalSection
+EndGlobal
