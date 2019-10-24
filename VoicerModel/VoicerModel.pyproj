@@ -27,6 +27,8 @@
     <Folder Include="Data\" />
     <Folder Include="Data\g2p\" />
     <Folder Include="g2p\" />
+    <Folder Include="Models\" />
+    <Folder Include="tacotron\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\g2p\en.dic" />
