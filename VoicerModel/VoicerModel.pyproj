@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>VoicerModel</Name>
     <RootNamespace>VoicerModel</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,14 +22,24 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="1_create_audio_dataset.py" />
+    <Compile Include="2_create_text_dataset.py" />
+    <Compile Include="3_train_tacotron.py" />
+    <Compile Include="4_test_tacotron.py" />
+    <Compile Include="hparams.py" />
+    <Compile Include="model\building_blocks.py" />
+    <Compile Include="model\tacotron_model.py" />
+    <Compile Include="processing\proc_audio.py" />
+    <Compile Include="processing\proc_text.py" />
     <Compile Include="VoicerModelTrain.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Data\" />
+    <Folder Include="data\" />
     <Folder Include="Data\g2p\" />
     <Folder Include="g2p\" />
     <Folder Include="Models\" />
-    <Folder Include="tacotron\" />
+    <Folder Include="model\" />
+    <Folder Include="processing\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\g2p\en.dic" />

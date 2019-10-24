@@ -24,6 +24,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 Data/
+data/
 Models/
 
 # Visual Studio 2015/2017 cache/options directory
