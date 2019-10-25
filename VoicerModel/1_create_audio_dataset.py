@@ -17,9 +17,6 @@ metadata = pd.read_csv('data/voice/Ruslan/metadata.csv',
 dot_wav_filenames = metadata[0].values
 
 
-mel_spectro_data = []
-spectro_data = []
-decoder_input = []
 print('Processing the audio samples (computation of spectrograms)...')
 for filename in tqdm(dot_wav_filenames):
     file_path = 'data/voice/Ruslan/' + filename + '.wav'
@@ -51,40 +48,6 @@ for filename in tqdm(dot_wav_filenames):
     padded_spectro = np.zeros((MAX_MAG_TIME_LENGTH, dim1_spectro))
     padded_spectro[:dim0_spectro, :dim1_spectro] = spectro
 
-    mel_spectro_data.append(padded_mel_spectro)
-    spectro_data.append(padded_spectro)
-    decoder_input.append(padded_decod_input)
-
-
-print('Convert into np.array')
-decoder_input_array = np.array(decoder_input)
-mel_spectro_data_array = np.array(mel_spectro_data)
-spectro_data_array = np.array(spectro_data)
-
-print('Split into training and testing data')
-len_train = int(TRAIN_SET_RATIO * len(metadata))
-
-decoder_input_array_training = decoder_input_array[:len_train]
-decoder_input_array_testing = decoder_input_array[len_train:]
-
-mel_spectro_data_array_training = mel_spectro_data_array[:len_train]
-mel_spectro_data_array_testing = mel_spectro_data_array[len_train:]
-
-spectro_data_array_training = spectro_data_array[:len_train]
-spectro_data_array_testing = spectro_data_array[len_train:]
-
-
-print('Save data as pkl')
-joblib.dump(decoder_input_array_training,
-            'data/decoder_input_training.pkl')
-joblib.dump(mel_spectro_data_array_training,
-            'data/mel_spectro_training.pkl')
-joblib.dump(spectro_data_array_training,
-            'data/spectro_training.pkl')
-
-joblib.dump(decoder_input_array_testing,
-            'data/decoder_input_testing.pkl')
-joblib.dump(mel_spectro_data_array_testing,
-            'data/mel_spectro_testing.pkl')
-joblib.dump(spectro_data_array_testing,
-            'data/spectro_testing.pkl')
+    joblib.dump(padded_mel_spectro,"data/mel_spectro_training_"+filename+".pkl")
+    joblib.dump(padded_spectro,"data/spectro_training_"+filename+".pkl")
+    joblib.dump(padded_decod_input,"data/decoder_input_training_"+filename+".pkl")
